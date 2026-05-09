@@ -1,0 +1,23 @@
+/* ===== object / component / _heading.scss ===== */
+@use "../../foundation/function" as f;
+@use "../../foundation/vars" as v;
+
+// --------------------------------------------------------------------------
+// Local variables
+// --------------------------------------------------------------------------
+$heading-font-family: v.$font-family-base;
+$heading-font-size: v.$font-size-16;
+$heading-font-weight: v.$font-weight-700;
+$heading-font-color: v.$color-text-main;
+$heading-line-height: v.$line-height-119;
+
+// --------------------------------------------------------------------------
+// .c-heading
+// --------------------------------------------------------------------------
+.c-heading {
+  font-family: $heading-font-family;
+  font-size: f.rem($heading-font-size);
+  font-weight: $heading-font-weight;
+  line-height: $heading-line-height;
+  color: $heading-font-color;
+}

@@ -1,0 +1,74 @@
+/* ===== foundation / _vars.scss ===== */
+@use "./function" as f;
+
+// --------------------------------------------------------------------------
+// Color
+// --------------------------------------------------------------------------
+// primitive color
+$gray-900: #333333;
+$gray-500: #4b4b4b;
+$gray-300: #c3c3c3;
+$gray-100: #ecebeb;
+$white: #ffffff;
+
+// semantic color
+$color-text-main: $gray-900;
+$color-border: $gray-300;
+$color-bg-base: $white;
+
+// --------------------------------------------------------------------------
+// Font
+// --------------------------------------------------------------------------
+$font-family-base: "Raleway", sans-serif;
+
+$font-size-10: 10;
+$font-size-12: 12;
+$font-size-16: 16;
+
+$font-size-body: f.rem($font-size-12);
+
+$font-weight-400: 400;
+$font-weight-700: 700;
+
+$font-weight-body: $font-weight-400;
+
+$line-height-117: 1.17;
+$line-height-119: 1.19;
+$line-height-120: 1.2;
+$line-height-190: 1.9;
+
+$line-height-body: $line-height-117;
+
+// --------------------------------------------------------------------------
+// Layout
+// --------------------------------------------------------------------------
+// primitive width
+$width-1000: 1000px;
+$width-800: 800px;
+
+// semantic layout width
+$layout-site-max: $width-1000;
+$layout-content-max: $width-800;
+
+// SP gutter
+$layout-header-gutter-sp: 19px;
+$layout-content-gutter-sp: 16px;
+
+// Breakpoint
+$breakpoint-sp: 896px;
+
+// --------------------------------------------------------------------------
+// Spacing
+// --------------------------------------------------------------------------
+$space-10: 10px;
+$space-14: 14px;
+$space-20: 20px;
+$space-26: 26px;
+$space-30: 30px;
+$space-36: 36px;
+$space-100: 100px;
+
+// --------------------------------------------------------------------------
+// z-index
+// --------------------------------------------------------------------------
+$z-index-page-top: 100;

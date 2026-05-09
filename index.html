@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOTALLY | CodeStep初級編③</title>
+    <meta name="description" content="TOTALLYは、シンプルなファッションアイテムの商品詳細ページです。デザインカンプをもとにHTML、CSS、Sassでコーディングした学習用サイトです。">
+
+    <!-- OGP -->
+    <meta property="og:site_name" content="TOTALLY">
+    <meta property="og:title" content="TOTALLY | CodeStep初級編③">
+    <meta property="og:description"
+        content="TOTALLYは、シンプルなファッションアイテムの商品詳細ページです。デザインカンプをもとにHTML、CSS、Sassでコーディングした学習用サイトです。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yutaka-create.github.io/totally/">
+    <meta property="og:image" content="https://yutaka-create.github.io/totally/img/ogp.jpg">
+    <meta property="og:image:alt" content="TOTALLYの商品詳細ページのプレビュー画像">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="ja_JP">
+
+    <!-- X / Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TOTALLY | CodeStep初級編③">
+    <meta name="twitter:description"
+        content="TOTALLYは、シンプルなファッションアイテムの商品詳細ページです。デザインカンプをもとにHTML、CSS、Sassでコーディングした学習用サイトです。">
+    <meta name="twitter:image" content="https://yutaka-create.github.io/totally/img/ogp.jpg">
+    <meta name="twitter:image:alt" content="TOTALLYの商品詳細ページのプレビュー画像">
+
+    <!-- Icon -->
+    <link rel="icon" href="img/favicon.ico">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="l-header">
+        <div class="l-header__inner l-container">
+            <div class="l-header__logo">
+                <a href="index.html" class="c-logo__link" aria-label="TOTALLY トップページへ戻る">
+                    <img src="img/logo.svg" alt="" width="109" height="19">
+                </a>
+            </div>
+            <div class="l-header__nav-area u-fade-up js-scroll-trigger">
+                <nav class="l-header__primary-nav" aria-label="商品カテゴリーナビゲーション">
+                    <ul class="l-header__primary-nav-list">
+                        <li class="l-header__primary-nav-item">
+                            <a href="#" class="l-header__primary-nav-link">ALL</a>
+                        </li>
+                        <li class="l-header__primary-nav-item">
+                            <a href="#" class="l-header__primary-nav-link">NEW</a>
+                        </li>
+                        <li class="l-header__primary-nav-item">
+                            <a href="#" class="l-header__primary-nav-link">VINTAGE</a>
+                        </li>
+                        <li class="l-header__primary-nav-item">
+                            <a href="#" class="l-header__primary-nav-link">CATEGORY</a>
+                        </li>
+                        <li class="l-header__primary-nav-item">
+                            <a href="#" class="l-header__primary-nav-link">LOOKBOOK</a>
+                        </li>
+                        <li class="l-header__primary-nav-item">
+                            <a href="#" class="l-header__primary-nav-link">BLOG</a>
+                        </li>
+                    </ul>
+                </nav>
+                <nav class="l-header__utility-nav" aria-label="ユーザーメニュー">
+                    <ul class="l-header__utility-nav-list">
+                        <li class="l-header__utility-nav-item">
+                            <a href="#" class="l-header__utility-nav-link">LOGIN</a>
+                        </li>
+                        <li class="l-header__utility-nav-item">
+                            <a href="#" class="l-header__utility-nav-link">CONTACT</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main class="l-main">
+        <section class="p-product" aria-labelledby="product-title">
+            <div class="p-product__inner l-container">
+                <div class="p-product__layout">
+                    <div class="p-product__media u-fade-up js-scroll-trigger">
+                        <picture class="p-product__picture">
+                            <source srcset="img/product-shirt.webp" type="image/webp">
+                            <img class="p-product__image" src="img/product-shirt.jpg" alt="胸元にTOTALLYのロゴが入ったショートスリーブシャツ"
+                                width="400" height="500" fetchpriority="high">
+                        </picture>
+                    </div>
+                    <div class="p-product__content u-fade-up js-scroll-trigger">
+                        <h1 id="product-title" class="p-product__title c-heading">TOTALLY Short Sleeve Shirt</h1>
+                        <p class="p-product__description">
+                            テキストテキストテキストテキストテキストテキストテキスト
+                            テキストテキストテキストテキストテキストテキストテキスト
+                            テキストテキストテキストテキストテキストテキストテキスト
+                            テキストテキストテキストテキストテキストテキストテキスト
+                            テキストテキストテキストテキストテキストテキストテキスト
+                            テキストテキストテキスト
+                        </p>
+                        <p class="p-product__price">¥9,999 <small class="p-product__tax">+tax</small></p>
+                        <form class="p-product__form" action="#" method="post">
+                            <table class="p-product__order-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Color</th>
+                                        <th scope="col">Size</th>
+                                        <th scope="col">
+                                            <span class="u-visually-hidden">Quantity</span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>White</td>
+                                        <td>S</td>
+                                        <td>
+                                            <div class="p-product__select-wrap">
+                                                <select class="p-product__select" name="quantity-s"
+                                                    aria-label="White S の数量">
+                                                    <option value="1" selected>1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>White</td>
+                                        <td>M</td>
+                                        <td>
+                                            <div class="p-product__select-wrap">
+                                                <select class="p-product__select" name="quantity-m"
+                                                    aria-label="White M の数量">
+                                                    <option value="1" selected>1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>White</td>
+                                        <td>L</td>
+                                        <td>
+                                            <div class="p-product__select-wrap">
+                                                <select class="p-product__select" name="quantity-l"
+                                                    aria-label="White L の数量">
+                                                    <option value="1" selected>1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <button class="p-product__button c-button c-button--full" type="submit">
+                                ADD TO CART
+                            </button>
+                        </form>
+                        <table class="p-product__size-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Size</th>
+                                    <th scope="col">Chest</th>
+                                    <th scope="col">Waist</th>
+                                    <th scope="col">Height</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">S</th>
+                                    <td>99 ～ 99</td>
+                                    <td>99 ～ 99</td>
+                                    <td>99 ～ 99</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">M</th>
+                                    <td>99 ～ 99</td>
+                                    <td>99 ～ 99</td>
+                                    <td>99 ～ 99</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">L</th>
+                                    <td>99 ～ 99</td>
+                                    <td>99 ～ 99</td>
+                                    <td>99 ～ 99</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="l-footer">
+        <p class="l-footer__copyright u-fade-up js-scroll-trigger">
+            <small class="l-footer__copyright-text">&copy; TOTALLY</small>
+        </p>
+    </footer>
+
+    <a class="c-page-top js-pagetop" href="#" aria-label="ページトップへ戻る"></a>
+
+    <script src="./js/intersection.js"></script>
+    <script src="./js/page-top.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

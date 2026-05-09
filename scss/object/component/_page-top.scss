@@ -1,0 +1,47 @@
+@use "../../foundation/vars" as v;
+@use "../../foundation/mixin" as m;
+
+.c-page-top {
+    position: fixed;
+    right: v.$space-20;
+    bottom: v.$space-20; // env()非対応ブラウザ向けフォールバック
+    bottom: calc(#{v.$space-20} + env(safe-area-inset-bottom)); // iOSホームバー対応
+    z-index: v.$z-index-page-top;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: v.$color-text-main;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s, transform 0.3s ease;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 10px;
+        background-color: v.$white;
+        clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    }
+
+    &.is-show {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transition: opacity .3s ease, visibility 0s linear 0s;
+    }
+
+    &:focus-visible {
+        outline: 2px solid v.$white;
+        outline-offset: 2px;
+        transform: translateY(-2px);
+    }
+
+    @include m.hover {
+        transform: translateY(-4px);
+    }
+}

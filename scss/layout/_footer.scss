@@ -1,0 +1,13 @@
+@use "../foundation/vars" as v;
+@use "../foundation/function" as f;
+
+.l-footer {
+    padding-top: v.$space-10;
+    padding-bottom: 300px;
+    text-align: center;
+
+    &__copyright-text {
+        font-size: f.rem(v.$font-size-10);
+        line-height: v.$line-height-120;
+    }
+}
