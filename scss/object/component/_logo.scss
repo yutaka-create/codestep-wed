@@ -2,11 +2,12 @@
 .c-logo {
   display: block;
 
-  a {
+  &__link {
     display: block;
   }
 
-  img {
+  &__image {
+    display: block;
     width: 100%;
     height: auto;
   }

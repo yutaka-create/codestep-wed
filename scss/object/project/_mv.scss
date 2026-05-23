@@ -1,0 +1,15 @@
+@use "../../foundation/vars" as v;
+
+.p-mv {
+    width: 100%;
+    height: calc(100vh - v.$header-height);
+    height: calc(100svh - v.$header-height);
+    background-image: url("../img/mv.jpg");
+    background-image: image-set(
+        url("../img/mv.webp") type("image/webp"),
+        url("../img/mv.jpg") type("image/jpeg")
+    );
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}

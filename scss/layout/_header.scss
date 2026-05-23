@@ -1,65 +1,105 @@
+@use "../foundation/function" as f;
 @use "../foundation/vars" as v;
 @use "../foundation/mixin" as m;
 
-$header-nav-gap: v.$space-14;
+$header-inner-max-width: 1400px;
+$header-main-padding-left-pc: 100px;
+$header-inner-padding-inline-sp: 16px;
+$header-logo-width-pc: 100px;
+$header-logo-width-sp: 80px;
+$header-logo-nav-gap-pc: 60px;
+$header-logo-nav-gap-sp: 8px;
+$header-nav-gap-pc: 30px;
+$header-contact-width-pc: 200px;
+$header-contact-font-size: 12px;
 
 .l-header {
     width: 100%;
-    max-width: v.$layout-site-max;
-    margin-inline: auto;
-    padding-top: 500px;
-    padding-bottom: 500px;
-    border-bottom: 1px solid v.$color-border;
-
-    @include m.mq-sp {
-        border-bottom: none;
-    }
+    height: v.$header-height;
 
     &__inner {
+        width: 100%;
+        max-width: $header-inner-max-width;
+        height: 100%;
+        margin-inline: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
         @include m.mq-sp {
-            padding-inline: v.$layout-header-gutter-sp;
+            padding-inline: $header-inner-padding-inline-sp;
+        }
+    }
+
+    &__main {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        gap: $header-logo-nav-gap-pc;
+        padding-left: $header-main-padding-left-pc;
+
+        @include m.mq-sp {
+            width: 100%;
+            min-width: 0;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: $header-logo-nav-gap-sp;
+            padding-left: 0;
         }
     }
 
     &__logo {
-        width: 109px;
-        line-height: 0;
-        margin: 0 auto 400px;
-
-    }
-
-    &__nav-area {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        width: $header-logo-width-pc;
 
         @include m.mq-sp {
-            gap: $header-nav-gap;
+            width: $header-logo-width-sp;
+        }
+    }
+
+    &__nav {
+        @include m.mq-sp {
+            width: 100%;
+            min-width: 0;
             overflow-x: auto;
+            overflow-y: hidden;
             -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
         }
     }
 
-    &__primary-nav,
-    &__utility-nav {
-        @include m.mq-sp {
-            flex-shrink: 0;
-        }
-    }
-
-    &__primary-nav-list,
-    &__utility-nav-list {
+    &__list {
         display: flex;
         align-items: center;
-        gap: $header-nav-gap;
-    }
-
-    &__primary-nav-link,
-    &__utility-nav-link {
-        display: block;
+        gap: $header-nav-gap-pc;
 
         @include m.mq-sp {
-            white-space: nowrap;
+            width: max-content;
+            min-width: max-content;
+        }
+    }
+
+    &__link {
+        display: block;
+        white-space: nowrap;
+    }
+
+    &__contact {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: $header-contact-width-pc;
+        height: 100%;
+        font-size: f.rem($header-contact-font-size);
+        color: v.$color-text-inverse;
+        background-color: v.$color-bg-black;
+
+        @include m.mq-sp {
+            display: none;
         }
     }
 }

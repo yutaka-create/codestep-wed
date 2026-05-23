@@ -14,14 +14,16 @@
 @use "layout/footer";
 
 // Component
-@use "object/component/button";
-@use "object/component/heading";
+@use "object/component/section-heading";
 @use "object/component/logo";
 @use "object/component/page-top";
 
 // Project
-@use "object/project/product";
-
+@use "object/project/mv";
+@use "object/project/news";
+@use "object/project/about";
+@use "object/project/business";
+@use "object/project/company";
 
 // Utility
 @use "object/utility/animation";

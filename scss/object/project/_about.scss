@@ -1,0 +1,81 @@
+/* ===== object / project / _about.scss ===== */
+@use "../../foundation/vars" as v;
+@use "../../foundation/mixin" as m;
+
+$about-media-width-pc: 55%;
+$about-media-height-pc: 400px;
+$about-media-height-sp: 300px;
+$about-layout-gap-sp: 30px;
+$about-body-padding-top-pc: 180px;
+$about-body-padding-inline-pc: 5%;
+$about-body-padding-inline-sp: 16px;
+$about-heading-margin-bottom-pc: 50px;
+$about-heading-margin-bottom-sp: 34px;
+$about-text-font-size: v.$font-size-14;
+$about-text-font-weight: v.$font-weight-light;
+$about-text-line-height: v.$line-height-22;
+
+.p-about {
+    &__layout {
+        display: flex;
+        width: 100%;
+
+        @include m.mq-sp {
+            flex-direction: column;
+            gap: $about-layout-gap-sp;
+        }
+    }
+
+    &__media {
+        width: $about-media-width-pc;
+        height: $about-media-height-pc;
+        overflow: hidden;
+        flex-shrink: 0;
+
+        @include m.mq-sp {
+            width: 100%;
+            height: $about-media-height-sp;
+        }
+    }
+
+    &__picture {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__body {
+        flex: 1;
+        min-width: 0;
+        padding-top: $about-body-padding-top-pc;
+        padding-inline: $about-body-padding-inline-pc;
+
+        @include m.mq-sp {
+            width: 100%;
+            flex: initial;
+            min-width: auto;
+            padding-top: 0;
+            padding-inline: $about-body-padding-inline-sp;
+        }
+    }
+
+    &__heading {
+        margin-bottom: $about-heading-margin-bottom-pc;
+
+        @include m.mq-sp {
+            margin-bottom: $about-heading-margin-bottom-sp;
+        }
+    }
+
+    &__text {
+        font-size: $about-text-font-size;
+        font-weight: $about-text-font-weight;
+        line-height: $about-text-line-height;
+    }
+}

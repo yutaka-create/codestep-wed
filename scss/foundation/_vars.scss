@@ -1,72 +1,84 @@
 /* ===== foundation / _vars.scss ===== */
-@use "./function" as f;
+
+// ==============================
+// Color Primitive
+// ==============================
+$color-black: #000000;
+$color-white: #ffffff;
+$color-gray-300: #cccccc;
+$color-gray-100: #f0f0f0;
+$color-red-500: #ff0000;
+
+// ==============================
+// Color Semantic
+// ==============================
+$color-text-main: $color-black;
+$color-bg-base: $color-gray-100;
+$color-bg-white: $color-white;
+$color-bg-black: $color-black;
+$color-text-inverse: $color-white;
+
+// ==============================
+// Font Family
+// ==============================
+$font-family-base: "Hiragino Kaku Gothic ProN", "Yu Gothic", "YuGothic", "Meiryo", sans-serif;
+
+// ==============================
+// Font Size Primitive
+// ==============================
+$font-size-14: 14px;
+$font-size-36: 36px;
+
+// ==============================
+// Font Size Semantic
+// ==============================
+$font-size-base: $font-size-14;
+
+// ==============================
+// Font Weight Primitive
+// ==============================
+$font-weight-light: 300;
+$font-weight-semibold: 600;
+
+// ==============================
+// Font Weight Semantic
+// ==============================
+$font-weight-base: $font-weight-light;
+
+// ==============================
+// Line Height Primitive
+// ==============================
+$line-height-1: 1;
+$line-height-15: 1.5;
+$line-height-167: 1.67;
+$line-height-22: 2.2;
+
+// ==============================
+// Line Height Semantic
+// ==============================
+$line-height-base: $line-height-15;
 
 // --------------------------------------------------------------------------
-// Color
+// Layout Primitive
 // --------------------------------------------------------------------------
-// primitive color
-$gray-900: #333333;
-$gray-500: #4b4b4b;
-$gray-300: #c3c3c3;
-$gray-100: #ecebeb;
-$white: #ffffff;
-
-// semantic color
-$color-text-main: $gray-900;
-$color-border: $gray-300;
-$color-bg-base: $white;
+$layout-width-1032: 1032px;
 
 // --------------------------------------------------------------------------
-// Font
+// Layout Semantic
 // --------------------------------------------------------------------------
-$font-family-base: "Raleway", sans-serif;
-
-$font-size-10: 10;
-$font-size-12: 12;
-$font-size-16: 16;
-
-$font-size-body: f.rem($font-size-12);
-
-$font-weight-400: 400;
-$font-weight-700: 700;
-
-$font-weight-body: $font-weight-400;
-
-$line-height-117: 1.17;
-$line-height-119: 1.19;
-$line-height-120: 1.2;
-$line-height-190: 1.9;
-
-$line-height-body: $line-height-117;
+$layout-container-max: $layout-width-1032;
+$layout-gutter: 16px;
+$header-height: 80px;
 
 // --------------------------------------------------------------------------
-// Layout
-// --------------------------------------------------------------------------
-// primitive width
-$width-1000: 1000px;
-$width-800: 800px;
-
-// semantic layout width
-$layout-site-max: $width-1000;
-$layout-content-max: $width-800;
-
-// SP gutter
-$layout-header-gutter-sp: 19px;
-$layout-content-gutter-sp: 16px;
-
 // Breakpoint
-$breakpoint-sp: 896px;
+// --------------------------------------------------------------------------
+$breakpoint-sp: 900px;
 
 // --------------------------------------------------------------------------
 // Spacing
 // --------------------------------------------------------------------------
-$space-10: 10px;
-$space-14: 14px;
 $space-20: 20px;
-$space-26: 26px;
-$space-30: 30px;
-$space-36: 36px;
-$space-100: 100px;
 
 // --------------------------------------------------------------------------
 // z-index

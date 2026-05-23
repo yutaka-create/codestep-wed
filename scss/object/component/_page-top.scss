@@ -24,7 +24,7 @@
         display: block;
         width: 20px;
         height: 10px;
-        background-color: v.$white;
+        background-color: v.$color-white;
         clip-path: polygon(50% 0, 100% 100%, 0 100%);
     }
 
@@ -36,7 +36,7 @@
     }
 
     &:focus-visible {
-        outline: 2px solid v.$white;
+        outline: 2px solid v.$color-white;
         outline-offset: 2px;
         transform: translateY(-2px);
     }

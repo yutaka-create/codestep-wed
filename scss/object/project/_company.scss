@@ -1,0 +1,183 @@
+/* ===== object / project / _company.scss ===== */
+@use "../../foundation/function" as f;
+@use "../../foundation/vars" as v;
+@use "../../foundation/mixin" as m;
+
+// ==============================
+// Local variables
+// ==============================
+
+// layout
+$company-inner-max-width: v.$layout-width-1032;
+$company-padding-bottom-pc: 128px;
+$company-padding-bottom-sp: 0;
+$company-inner-padding-inline-sp: 16px;
+
+// content - PC
+$company-content-width-pc: 55%;
+$company-content-padding-block-pc: 100px;
+$company-content-padding-left-pc: 62px;
+// PCカンプ実測値：139px / 1032px = 13.47%
+$company-content-padding-right-pc: 13.47%;
+
+// content - SP
+$company-content-padding-block-sp: 40px;
+$company-content-padding-left-sp: 20px;
+// SPカンプ実測値：28px / 343px = 8.16%
+$company-content-padding-right-sp: 8.16%;
+$company-content-margin-bottom-sp: 20px;
+
+// heading
+$company-heading-margin-bottom-pc: 50px;
+$company-heading-margin-bottom-sp: 34px;
+
+// 375pxカンプは維持し、374px以下の狭小画面だけ見出しのはみ出しを防ぐ
+$company-heading-narrow-breakpoint: 374px;
+$company-heading-en-font-size-narrow: 32px;
+$company-heading-en-letter-spacing-narrow: 0.24em;
+
+// company list
+$company-item-gap-pc: 10px;
+$company-item-gap-sp: 20px;
+$company-item-inner-gap-sp: 5px;
+$company-term-width-pc: 85px;
+$company-description-indent-sp: 1em;
+
+// business list
+$company-business-item-line-height: v.$line-height-15;
+$company-business-item-gap-pc: 10px;
+$company-business-item-gap-sp: 5px;
+
+// media
+$company-media-width-pc: 53%;
+$company-media-height-pc: 400px;
+// SPカンプ実測値：343px × 400px
+$company-media-height-sp: 400px;
+
+.p-company {
+    padding-bottom: $company-padding-bottom-pc;
+
+    @include m.mq-sp {
+        padding-bottom: $company-padding-bottom-sp;
+    }
+
+    &__inner {
+        position: relative;
+        width: 100%;
+        max-width: $company-inner-max-width;
+        margin-inline: auto;
+
+        @include m.mq-sp {
+            position: static;
+            padding-inline: $company-inner-padding-inline-sp;
+        }
+    }
+
+    &__content {
+        width: $company-content-width-pc;
+        padding: $company-content-padding-block-pc $company-content-padding-right-pc $company-content-padding-block-pc $company-content-padding-left-pc;
+        background-color: v.$color-bg-white;
+
+        @include m.mq-sp {
+            width: 100%;
+            padding: $company-content-padding-block-sp $company-content-padding-right-sp $company-content-padding-block-sp $company-content-padding-left-sp;
+            margin-bottom: $company-content-margin-bottom-sp;
+        }
+    }
+
+    &__heading {
+        margin-bottom: $company-heading-margin-bottom-pc;
+
+        @include m.mq-sp {
+            margin-bottom: $company-heading-margin-bottom-sp;
+        }
+
+        .c-section-heading__en {
+            @media (max-width: $company-heading-narrow-breakpoint) {
+                font-size: f.rem($company-heading-en-font-size-narrow);
+                letter-spacing: $company-heading-en-letter-spacing-narrow;
+            }
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: flex-start;
+
+        @include m.mq-sp {
+            flex-direction: column;
+            gap: $company-item-inner-gap-sp;
+        }
+
+        &:not(:first-child) {
+            margin-top: $company-item-gap-pc;
+
+            @include m.mq-sp {
+                margin-top: $company-item-gap-sp;
+            }
+        }
+    }
+
+    &__term {
+        flex: 0 0 $company-term-width-pc;
+        font-weight: v.$font-weight-light;
+        white-space: nowrap;
+
+        @include m.mq-sp {
+            flex: initial;
+        }
+    }
+
+    &__description {
+        flex: 1;
+        min-width: 0;
+
+        @include m.mq-sp {
+            flex: initial;
+            width: 100%;
+            padding-left: $company-description-indent-sp;
+        }
+    }
+
+    &__business-list {
+        display: flex;
+        flex-direction: column;
+        gap: $company-business-item-gap-pc;
+
+        @include m.mq-sp {
+            gap: $company-business-item-gap-sp;
+        }
+    }
+
+    &__business-item {
+        line-height: $company-business-item-line-height;
+    }
+
+    &__media {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: $company-media-width-pc;
+        height: $company-media-height-pc;
+        overflow: hidden;
+        transform: translateY(-50%);
+
+        @include m.mq-sp {
+            position: static;
+            width: 100%;
+            height: $company-media-height-sp;
+            transform: none;
+        }
+    }
+
+    &__picture {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}

@@ -1,13 +1,59 @@
-@use "../foundation/vars" as v;
 @use "../foundation/function" as f;
+@use "../foundation/vars" as v;
+@use "../foundation/mixin" as m;
 
+// ==============================
+// Local variables
+// ==============================
+
+// layout
+$footer-padding-top-pc: 40px;
+$footer-padding-top-sp: 48px;
+$footer-padding-bottom: 20px;
+$footer-inner-margin-bottom: 40px;
+$footer-layout-gap-sp: 10px;
+
+// logo
+$footer-logo-width-pc: 100px;
+$footer-logo-width-sp: 80px;
+
+// copyright
+$footer-copyright-font-size: 10px;
+
+// ==============================
+// Footer
+// ==============================
 .l-footer {
-    padding-top: v.$space-10;
-    padding-bottom: 300px;
-    text-align: center;
+    padding-top: $footer-padding-top-pc;
+    padding-bottom: $footer-padding-bottom;
+    background-color: v.$color-bg-white;
+
+    @include m.mq-sp {
+        padding-top: $footer-padding-top-sp;
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: $footer-inner-margin-bottom;
+
+        @include m.mq-sp {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: $footer-layout-gap-sp;
+        }
+    }
+
+    &__logo {
+        width: $footer-logo-width-pc;
+
+        @include m.mq-sp {
+            width: $footer-logo-width-sp;
+        }
+    }
 
     &__copyright-text {
-        font-size: f.rem(v.$font-size-10);
-        line-height: v.$line-height-120;
+        font-size: f.rem($footer-copyright-font-size);
     }
 }

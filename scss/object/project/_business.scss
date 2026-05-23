@@ -1,0 +1,113 @@
+/* ===== object / project / _business.scss ===== */
+@use "../../foundation/function" as f;
+@use "../../foundation/vars" as v;
+@use "../../foundation/mixin" as m;
+
+// ==============================
+// Business Local Variables
+// ==============================
+$business-padding-block-pc: 120px;
+$business-padding-block-sp: 80px;
+
+$business-heading-margin-bottom-pc: 50px;
+$business-heading-margin-bottom-sp: 34px;
+
+$business-list-padding-inline-pc: 100px;
+$business-list-column-gap-pc: 64px;
+$business-list-row-gap-pc: 50px;
+$business-list-row-gap-sp: 30px;
+$business-left-column-offset-pc: 80px;
+
+$business-item-title-font-size: v.$font-size-14;
+$business-item-title-font-weight: v.$font-weight-semibold;
+$business-item-title-line-height: v.$line-height-15;
+$business-item-title-margin-bottom: 10px;
+$business-item-title-gap: 10px;
+
+$business-title-line-width: 8px;
+$business-title-line-thickness: 1px;
+
+.p-business {
+    padding-block: $business-padding-block-pc;
+
+    @include m.mq-sp {
+        padding-block: $business-padding-block-sp;
+    }
+
+    &__heading {
+        margin-bottom: $business-heading-margin-bottom-pc;
+
+        @include m.mq-sp {
+            margin-bottom: $business-heading-margin-bottom-sp;
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+        grid-auto-flow: column;
+        column-gap: $business-list-column-gap-pc;
+        row-gap: $business-list-row-gap-pc;
+        padding-inline: $business-list-padding-inline-pc;
+
+        // transformで下げた分、見た目の高さを確保する
+        padding-bottom: $business-left-column-offset-pc;
+
+        @include m.mq-sp {
+            display: block;
+            padding-inline: 0;
+            padding-bottom: 0;
+        }
+    }
+
+    // PCでは左列の2項目だけ下にずらして段差を作る
+    &__item:nth-child(1),
+    &__item:nth-child(2) {
+        transform: translateY($business-left-column-offset-pc);
+
+        @include m.mq-sp {
+            transform: none;
+        }
+    }
+
+    &__item:not(:first-child) {
+        @include m.mq-sp {
+            // SPではgridを解除するため、項目間の縦余白をmarginで確保する
+            margin-top: $business-list-row-gap-sp;
+        }
+    }
+
+    &__item-title {
+        display: flex;
+        align-items: center;
+        gap: $business-item-title-gap;
+        margin-bottom: $business-item-title-margin-bottom;
+        font-size: f.rem($business-item-title-font-size);
+        font-weight: $business-item-title-font-weight;
+        line-height: $business-item-title-line-height;
+        color: v.$color-text-main;
+
+        &::before {
+            content: "";
+            display: block;
+            flex-shrink: 0;
+            width: $business-title-line-width;
+            height: $business-title-line-thickness;
+            background-color: currentColor;
+        }
+    }
+
+    &__picture {
+        display: block;
+        width: 100%;
+        aspect-ratio: 368 / 232;
+        overflow: hidden;
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}

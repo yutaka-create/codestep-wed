@@ -1,0 +1,50 @@
+/* ===== object / component / _heading.scss ===== */
+@use "../../foundation/function" as f;
+@use "../../foundation/vars" as v;
+@use "../../foundation/mixin" as m;
+
+$section-heading-en-font-size: v.$font-size-36;
+$section-heading-ja-font-size: v.$font-size-14;
+$section-heading-font-weight: v.$font-weight-light;
+$section-heading-en-line-height: v.$line-height-1;
+$section-heading-ja-line-height: v.$line-height-15;
+$section-heading-letter-spacing: 0.3em;
+$section-heading-en-ja-gap: 10px;
+$section-heading-line-width: 40px;
+$section-heading-line-thickness: 1px;
+$section-heading-line-gap-pc: 36px;
+$section-heading-line-gap-sp: 24px;
+$section-heading-text-color: v.$color-text-main;
+
+.c-section-heading {
+    display: block;
+    font-weight: $section-heading-font-weight;
+    color: $section-heading-text-color;
+
+    &__en {
+        display: block;
+        font-size: f.rem($section-heading-en-font-size);
+        line-height: $section-heading-en-line-height;
+        letter-spacing: $section-heading-letter-spacing;
+        margin-bottom: $section-heading-en-ja-gap;
+    }
+
+    &__ja {
+        display: block;
+        font-size: f.rem($section-heading-ja-font-size);
+        line-height: $section-heading-ja-line-height;
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        width: $section-heading-line-width;
+        height: $section-heading-line-thickness;
+        margin-top: $section-heading-line-gap-pc;
+        background-color: currentColor;
+
+        @include m.mq-sp {
+            margin-top: $section-heading-line-gap-sp;
+        }
+    }
+}
