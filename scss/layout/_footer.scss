@@ -24,12 +24,12 @@ $footer-copyright-font-size: 10px;
 // Footer
 // ==============================
 .l-footer {
-    padding-top: $footer-padding-top-pc;
-    padding-bottom: $footer-padding-bottom;
+    padding-top: 800px;
+    padding-bottom: 800px;
     background-color: v.$color-bg-white;
 
     @include m.mq-sp {
-        padding-top: $footer-padding-top-sp;
+        padding-top: 700px;
     }
 
     &__inner {

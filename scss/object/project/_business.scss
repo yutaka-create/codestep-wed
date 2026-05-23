@@ -28,10 +28,10 @@ $business-title-line-width: 8px;
 $business-title-line-thickness: 1px;
 
 .p-business {
-    padding-block: $business-padding-block-pc;
+    padding-block: 800px;
 
     @include m.mq-sp {
-        padding-block: $business-padding-block-sp;
+        padding-block: 700px;
     }
 
     &__heading {

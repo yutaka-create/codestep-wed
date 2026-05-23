@@ -55,10 +55,10 @@ $company-media-height-pc: 400px;
 $company-media-height-sp: 400px;
 
 .p-company {
-    padding-bottom: $company-padding-bottom-pc;
+    padding-bottom: 800px;
 
     @include m.mq-sp {
-        padding-bottom: $company-padding-bottom-sp;
+        padding-bottom: 700px;
     }
 
     &__inner {

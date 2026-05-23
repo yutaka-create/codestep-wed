@@ -33,11 +33,11 @@ $news-label-text-color: v.$color-white;
 $news-label-bg-color: v.$color-black;
 
 .p-news {
-    padding-block: $news-padding-block-pc;
+    padding-block: 800px;
 
     @include m.mq-sp {
-        padding-top: $news-padding-top-sp;
-        padding-bottom: $news-padding-bottom-sp;
+        padding-top: 700px;
+        padding-bottom: 700px;
     }
 
     &__heading {
